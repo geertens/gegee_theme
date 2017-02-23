@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>opacity animation</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <style type="text/css">
+        .positie {
+            position: absolute;
+        }
+        
+        img.positie {
+            width: 100%;
+            height: auto;
+        }
+        
+        ._1 {
+            z-index: 1000;
+        }
+        ._2{
+            z-index: 900; 
+        }
+         ._3{
+            z-index: 800; 
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            var aantal = 3;
+            var i=1;
+            
+            vervaag();
+             
+          /*$(index).animate({
+               opacity: 0
+           }, 15000, function () {
+             
+           });*/
+             
+     }); 
+         
+        function vervaag(){
+            
+         var index = "._"+ 1;
+           
+            //var nummer=checkIndex();
+           $(index).animate({
+               opacity: 0
+           }, 15000, function () {
+               nummer = nummer+1;
+               index = "._"+ nummer; 
+                alert(index);
+             setTimeout(vervaag,15000);
+           });
+              //var nummer= nummer + 1;
+        }
+        
+        function checkIndex(i){
+          if (i ==1)  {
+              index="._"+1
+          } else{
+              i=i+1;
+              index="._"+i;
+          }
+          return index;
+        }
+        
+        function verminderOpacity(index){
+            
+        }
+        
+        /* $(index).animate({
+               opacity: 0
+           }, 15000, function () {
+               var klasse = $(this).attr('class');
+               
+              
+               //alert(klasse);
+               var index = "._"+2;
+           })*/
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <img src="slider_1.png" class="positie _1">
+    <img src="slider_2.png" class="positie _2">
+    <img src="slider_6.png" class="positie _3">
+
+
+
+
+
+</body>
+
+</html>
